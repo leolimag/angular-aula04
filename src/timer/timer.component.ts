@@ -3,16 +3,16 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-timer',
   templateUrl: './timer.component.html',
-  styleUrls: ['./timer.component.css']
+  styleUrls: ['./timer.component.css'],
+  standalone: true,
 })
 export class TimerComponent implements OnInit {
+  counter: number = 0;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  
   timer = setInterval(() => {
     this.counter += 1;
   }, 1000);
@@ -24,5 +24,4 @@ export class TimerComponent implements OnInit {
   getMinutes() {
     return Math.trunc(this.counter / 60);
   }
-
 }
